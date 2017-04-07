@@ -1,15 +1,14 @@
 const express = require('express');
 const app = express();
 
+require('dotenv').config();
+
 app.use(express.static(__dirname + '/public'));
 
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+mongoose.connect(process.env.MONGODB_URI)
 
-mongoose.connect('mongodb://localhost:cornhole', function() {
-  console.log('Database connected.')
-});
-
-const port = process.env.PORT || 3000
+const port = process.env.PORT;
 app.listen(port, function (){
   console.log(`Server listening on port: ${port}.`);
 });
