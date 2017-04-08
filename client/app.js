@@ -28,6 +28,10 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
     .state('play', {
       url: '/play',
       template: '<play></play>'
+    })
+    .state('settings', {
+      url: '/settings',
+      template: '<settings></settings>'
     });
   $urlRouterProvider.otherwise('/');
 }
