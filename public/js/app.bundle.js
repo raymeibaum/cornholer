@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 22);
+/******/ 	return __webpack_require__(__webpack_require__.s = 25);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -122,6 +122,16 @@ module.exports = RegisterController;
 /* 5 */
 /***/ (function(module, exports) {
 
+function UserSettingController() {
+  const vm = this;
+}
+
+module.exports = UserSettingController;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
 function UserShowController() {
   const vm = this;
 }
@@ -129,11 +139,11 @@ function UserShowController() {
 module.exports = UserShowController;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const angular = __webpack_require__(15);
-__webpack_require__(13);
+const angular = __webpack_require__(17);
+__webpack_require__(15);
 
 angular.module('project3', ['ui.router']).config(uiRouterSetup);
 
@@ -166,11 +176,11 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
 }
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const controller = __webpack_require__(0);
-const template = __webpack_require__(16);
+const template = __webpack_require__(18);
 
 const AdminComponent = {
   controller: controller,
@@ -180,11 +190,11 @@ const AdminComponent = {
 angular.module('project3').component('admin', AdminComponent);
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const controller = __webpack_require__(1);
-const template = __webpack_require__(17);
+const template = __webpack_require__(19);
 
 const GameViewController = {
   controller: controller,
@@ -194,11 +204,11 @@ const GameViewController = {
 angular.module('project3').component('gameView', GameViewController);
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const controller = __webpack_require__(2);
-const template = __webpack_require__(18);
+const template = __webpack_require__(20);
 
 const component = {
   controller: controller,
@@ -208,11 +218,11 @@ const component = {
 angular.module('project3').component('login', component);
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const controller = __webpack_require__(3);
-const template = __webpack_require__(19);
+const template = __webpack_require__(21);
 
 const component = {
   controller: controller,
@@ -222,11 +232,11 @@ const component = {
 angular.module('project3').component('play', component);
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const controller = __webpack_require__(4);
-const template = __webpack_require__(20);
+const template = __webpack_require__(22);
 
 const RegisterComponent = {
   controller: controller,
@@ -236,11 +246,25 @@ const RegisterComponent = {
 angular.module('project3').component('register', RegisterComponent);
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const controller = __webpack_require__(5);
-const template = __webpack_require__(21);
+const template = __webpack_require__(23);
+
+const component = {
+  controller: controller,
+  template: template
+};
+
+angular.module('project3').component('userSetting', component);
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const controller = __webpack_require__(6);
+const template = __webpack_require__(24);
 
 const UserShowComponent = {
   controller: controller,
@@ -250,7 +274,7 @@ const UserShowComponent = {
 angular.module('project3').component('userShow', UserShowComponent);
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /**
@@ -4939,7 +4963,7 @@ angular.module('ui.router.state')
 })(window, window.angular);
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /**
@@ -38316,66 +38340,74 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(14);
+__webpack_require__(16);
 module.exports = angular;
 
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Admin</h1>\n";
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Game View</h1>\n";
 
 /***/ }),
 /* 18 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Hello World from Login!</h1>\n";
+module.exports = "<h1>Admin</h1>\n";
 
 /***/ }),
 /* 19 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>This is where we will play!!</h1>\n";
+module.exports = "<h1>Game View</h1>\n";
 
 /***/ }),
 /* 20 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Register</h1>\n";
+module.exports = "<h1>Hello World from Login!</h1>\n";
 
 /***/ }),
 /* 21 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>User Show</h1>\n";
+module.exports = "<h1>This is where we will play!!</h1>\n";
 
 /***/ }),
 /* 22 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Register</h1>\n";
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>User's Settings</h1>\n";
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>User Show</h1>\n";
+
+/***/ }),
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(6);
 __webpack_require__(7);
-__webpack_require__(0);
 __webpack_require__(8);
-__webpack_require__(1);
+__webpack_require__(0);
 __webpack_require__(9);
-__webpack_require__(2);
+__webpack_require__(1);
 __webpack_require__(10);
-__webpack_require__(3);
+__webpack_require__(2);
 __webpack_require__(11);
-__webpack_require__(4);
+__webpack_require__(3);
 __webpack_require__(12);
-module.exports = __webpack_require__(5);
+__webpack_require__(4);
+__webpack_require__(13);
+__webpack_require__(5);
+__webpack_require__(14);
+module.exports = __webpack_require__(6);
 
 
 /***/ })
