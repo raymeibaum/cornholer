@@ -13,6 +13,10 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
       url: '/admin',
       template: '<admin></admin>'
     })
+    .state('gameView', {
+      url: '/',
+      template: '<game-view></game-view>'
+    })
     .state('login', {
       url: '/login',
       template: '<login></login'
