@@ -12,6 +12,14 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
     .state('admin', {
       url: '/admin',
       template: '<admin></admin>'
+    })
+    .state('login', {
+      url: '/login',
+      template: '<login></login'
+    })
+    .state('register', {
+      url: '/register',
+      template: '<register></register>'
     });
   $urlRouterProvider.otherwise('/');
 }
