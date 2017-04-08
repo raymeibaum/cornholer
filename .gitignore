@@ -41,3 +41,6 @@ jspm_packages
 
 # dotenv
 .env
+
+# Webpack bundle
+public/js/app.bundle.js
