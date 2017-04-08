@@ -28,6 +28,14 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
     .state('play', {
       url: '/play',
       template: '<play></play>'
+    })
+    .state('userShow', {
+      url: '/users/:username',
+      template: '<user-show></user-show>'
+    })
+    .state('userSetting', {
+      url: '/users/:username/settings',
+      template: '<user-setting></user-setting>'
     });
   $urlRouterProvider.otherwise('/');
 }
