@@ -5,11 +5,11 @@ mongoose.Promise = global.Promise;
 
 const GameSchema = new Schema({
   winner: {
-    users: [],
+    users: Array,
     score: Number
   },
   loser: {
-    users: [],
+    users: Array,
     score: Number
   }
 });
@@ -17,6 +17,7 @@ const GameSchema = new Schema({
 const UserSchema = new Schema({
   username: String,
   passwordDigest: String,
+  telephone: Number,
   games: [GameSchema],
   timestamps: {
     createdAt: Date,
