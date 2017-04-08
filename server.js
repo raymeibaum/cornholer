@@ -5,8 +5,12 @@ require('dotenv').config();
 
 app.use(express.static(__dirname + '/public'));
 
-const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI)
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI);
+
+const usersController = require('./server/controllers/users.js');
+app.use('/api/users/:username', usersController);
+
 
 const port = process.env.PORT;
 app.listen(port, function (){
