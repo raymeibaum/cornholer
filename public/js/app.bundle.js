@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,10 +78,32 @@ module.exports = AdminController;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+function GameViewController() {
+  const vm = this;
+}
+
+module.exports = GameViewController;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+LoginController.$inject = [];
+
+function LoginController() {
+  const vm = this;
+}
+
+module.exports = LoginController;
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const angular = __webpack_require__(5);
-__webpack_require__(3);
+const angular = __webpack_require__(9);
+__webpack_require__(7);
 
 angular.module('project3', ['ui.router']).config(uiRouterSetup);
 
@@ -91,16 +113,20 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
   $stateProvider.state('admin', {
     url: '/admin',
     template: '<admin></admin>'
+  }).state('gameView', {
+    url: '/',
+    template: '<game-view></game-view>'
   });
+
   $urlRouterProvider.otherwise('/');
 }
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const controller = __webpack_require__(0);
-const template = __webpack_require__(6);
+const template = __webpack_require__(10);
 
 const AdminComponent = {
   controller: controller,
@@ -110,7 +136,35 @@ const AdminComponent = {
 angular.module('project3').component('admin', AdminComponent);
 
 /***/ }),
-/* 3 */
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const controller = __webpack_require__(1);
+const template = __webpack_require__(11);
+
+const GameViewController = {
+  controller: controller,
+  template: template
+};
+
+angular.module('project3').component('gameView', GameViewController);
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const controller = __webpack_require__(2);
+const template = __webpack_require__(12);
+
+const component = {
+  controller: controller,
+  template: template
+};
+
+angular.module('project3').component('login', component);
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports) {
 
 /**
@@ -4799,7 +4853,7 @@ angular.module('ui.router.state')
 })(window, window.angular);
 
 /***/ }),
-/* 4 */
+/* 8 */
 /***/ (function(module, exports) {
 
 /**
@@ -38176,26 +38230,42 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-/* 5 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(4);
+__webpack_require__(8);
 module.exports = angular;
 
 
 /***/ }),
-/* 6 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Admin</h1>\n";
 
 /***/ }),
-/* 7 */
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Game View</h1>\n";
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Hello World from Login!</h1>\n";
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(3);
+__webpack_require__(4);
+__webpack_require__(0);
+__webpack_require__(5);
 __webpack_require__(1);
-__webpack_require__(2);
-module.exports = __webpack_require__(0);
+__webpack_require__(6);
+module.exports = __webpack_require__(2);
 
 
 /***/ })
