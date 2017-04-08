@@ -27,7 +27,8 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.2",
     "glob": "^7.1.1",
-    "mongoose": "^4.9.3"
+    "mongoose": "^4.9.3",
+    "morgan": "^1.8.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
