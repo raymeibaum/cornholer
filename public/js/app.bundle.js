@@ -63,11 +63,16 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 13);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+>>>>>>> cdd8a10b87168cf3dfff4ebe33bee5be9b811860
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+<<<<<<< HEAD
 /***/ (function(module, exports) {
 
 function AdminController() {
@@ -4799,61 +4804,37 @@ function $StateRefActiveDirective($state, $stateParams, $interpolate) {
       function removeClass(el, className) { el.removeClass(className); }
       function anyMatch(state, params) { return $state.includes(state.name, params); }
       function exactMatch(state, params) { return $state.is(state.name, params); }
+=======
+/***/ (function(module, exports, __webpack_require__) {
+>>>>>>> cdd8a10b87168cf3dfff4ebe33bee5be9b811860
 
-      update();
-    }]
-  };
+const angular = __webpack_require__(2);
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"angular-ui-router\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+angular.module('project3', ['ui.router']).config(uiRouterSetup);
+
+uiRouterSetup.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+function uiRouterSetup($stateProvider, $urlRouterProvider) {
+  $stateProvider.state('admin', {
+    url: '/admin',
+    template: '<admin></admin>'
+  }).state('login', {
+    url: '/login',
+    template: '<login></login'
+  }).state('register', {
+    url: '/register',
+    template: '<register></register>'
+  });
+  $urlRouterProvider.otherwise('/');
 }
-
-angular.module('ui.router.state')
-  .directive('uiSref', $StateRefDirective)
-  .directive('uiSrefActive', $StateRefActiveDirective)
-  .directive('uiSrefActiveEq', $StateRefActiveDirective)
-  .directive('uiState', $StateRefDynamicDirective);
-
-/**
- * @ngdoc filter
- * @name ui.router.state.filter:isState
- *
- * @requires ui.router.state.$state
- *
- * @description
- * Translates to {@link ui.router.state.$state#methods_is $state.is("stateName")}.
- */
-$IsStateFilter.$inject = ['$state'];
-function $IsStateFilter($state) {
-  var isFilter = function (state, params) {
-    return $state.is(state, params);
-  };
-  isFilter.$stateful = true;
-  return isFilter;
-}
-
-/**
- * @ngdoc filter
- * @name ui.router.state.filter:includedByState
- *
- * @requires ui.router.state.$state
- *
- * @description
- * Translates to {@link ui.router.state.$state#methods_includes $state.includes('fullOrPartialStateName')}.
- */
-$IncludedByStateFilter.$inject = ['$state'];
-function $IncludedByStateFilter($state) {
-  var includesFilter = function (state, params, options) {
-    return $state.includes(state, params, options);
-  };
-  includesFilter.$stateful = true;
-  return  includesFilter;
-}
-
-angular.module('ui.router.state')
-  .filter('isState', $IsStateFilter)
-  .filter('includedByState', $IncludedByStateFilter);
-})(window, window.angular);
 
 /***/ }),
+<<<<<<< HEAD
 /* 8 */
+=======
+/* 1 */
+>>>>>>> cdd8a10b87168cf3dfff4ebe33bee5be9b811860
 /***/ (function(module, exports) {
 
 /**
@@ -38230,14 +38211,22 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
+<<<<<<< HEAD
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(8);
+=======
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(1);
+>>>>>>> cdd8a10b87168cf3dfff4ebe33bee5be9b811860
 module.exports = angular;
 
 
 /***/ }),
+<<<<<<< HEAD
 /* 10 */
 /***/ (function(module, exports) {
 
@@ -38266,6 +38255,12 @@ __webpack_require__(5);
 __webpack_require__(1);
 __webpack_require__(6);
 module.exports = __webpack_require__(2);
+=======
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(0);
+>>>>>>> cdd8a10b87168cf3dfff4ebe33bee5be9b811860
 
 
 /***/ })
