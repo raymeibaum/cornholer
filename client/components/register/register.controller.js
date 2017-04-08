@@ -3,4 +3,4 @@ function RegisterController() {
 
 }
 
-module.exports = AdminController;
+module.exports = RegisterController;
