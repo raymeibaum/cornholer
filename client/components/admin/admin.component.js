@@ -8,4 +8,4 @@ const AdminComponent = {
 
 angular
   .module('project3')
-  .component('adminComponent', AdminComponent);
+  .component('admin', AdminComponent);
