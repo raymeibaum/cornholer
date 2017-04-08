@@ -5,6 +5,14 @@ WDI9 Project 3 Group 2
 ## Description
 Cornholer is an app that allows users to play competitive cornhole and track their stats
 
+## Getting Started
+Clone and cd into the cornholer directory and run the following commands:
+
+```shell
+npm install
+npm start
+```
+
 ## Deployment
 Cornholer is deployed [**here**](https://cornholer.herokuapp.com/).
 
