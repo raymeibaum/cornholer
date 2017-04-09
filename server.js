@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
 const usersController = require('./server/controllers/users.js');
-app.use('/api/users/:username', usersController);
+app.use('/api/users/', usersController);
 
 
 const port = process.env.PORT;
