@@ -16,10 +16,13 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
     .state('gameView', {
       url: '/',
       template: '<game-view></game-view>'
+      // resolve: {
+      //   checkLoggedIn: 'AuthService.isLoggedIn'
+      // }
     })
     .state('login', {
       url: '/login',
-      template: '<login></login'
+      template: '<login></login>'
     })
     .state('register', {
       url: '/register',
