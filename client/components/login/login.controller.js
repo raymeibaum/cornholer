@@ -1,14 +1,15 @@
-LoginController.$inject = ['AuthService'];
+LoginController.$inject = ['$rootScope', '$location', 'AuthService'];
 
-function LoginController(AuthService) {
+function LoginController($rootScope, $location, AuthService) {
   const vm = this;
 
   vm.user = {};
   vm.login = login
 
-  function login(user) {
+  function login() {
+    console.log('submit clicked', vm.user)
     AuthService
-      .login(user)
+      .login(vm.user)
       .then(function(user) {
         $rootScope.currentUser = user;
         $location.url("/");

@@ -1,5 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy
 const User = require('../models/user.js');
+const bcrypt = require('bcrypt');
 
 module.exports = passportHelpers;
 
@@ -14,10 +15,9 @@ function passportHelpers(passport) {
     });
   });
 
-  passport.use('register', new LocalStrategy({ passReqToCallback: true },
-  function(req, username, password, done) {
+  passport.use('register', new LocalStrategy({ passReqToCallback: true }, function(req, username, password, done) {
     if (req.body.password !== req.body.confirmPassword) {
-      return done(null, false, { message: "Passwords don't match."});
+      return done(null, false);
     }
     User.findOne({ username: username })
       .exec(function(err, user) {
@@ -25,9 +25,10 @@ function passportHelpers(passport) {
         if (user) {
           return done(null, false, { message: 'A user exists with that username.' });
         } else {
+          const createdPasswordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
           let newUser = new User({
             username: username,
-            passwordDigest: bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+            passwordDigest: createdPasswordDigest
           });
           newUser.save(function(err, user) {
             if (err) { return done(err); }
@@ -38,13 +39,12 @@ function passportHelpers(passport) {
     }
   ));
 
-  passport.use('login', new LocalStrategy({ passReqToCallback: true },
-  function(req, username, password, done) {
+  passport.use('login', new LocalStrategy(function(username, password, done) {
     User.findOne({ username: username })
       .exec(function(err, user) {
         if (err) { return done(err); }
         if (!user || !bcrypt.compareSync(password, user.passwordDigest)) {
-          return done(null, false, { message: 'Incorrect username or password.' });
+          return done(null, false);
         } else {
           return done(null, user);
         }

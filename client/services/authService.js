@@ -4,7 +4,7 @@ angular
 
 AuthService.$inject = ['$http'];
 
-function UsersService($http) {
+function AuthService($http) {
   const self = this;
 
   self.login = login;
