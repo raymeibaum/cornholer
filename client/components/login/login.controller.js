@@ -7,15 +7,13 @@ function LoginController($rootScope, $location, AuthService) {
   vm.login = login
 
   function login() {
-    console.log('submit clicked', vm.user)
     AuthService
       .login(vm.user)
       .then(function(user) {
         $rootScope.currentUser = user;
         $location.url("/");
-      })
+      });
   }
-
 }
 
 module.exports = LoginController;

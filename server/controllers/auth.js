@@ -11,7 +11,15 @@ module.exports = function(passport) {
   router.post('/register', passport.authenticate('register'), function(req, res) {
     console.log(req.user);
     res.json(req.user);
-  })
+  });
 
+  router.get("/loggedin", function(req, res) {
+    req.isAuthenticated() ? res.send(req.user) : null
+  });
+
+  router.post('/logout', function(req, res) {
+    req.logOut();
+    res.send(200);
+  })
   return router;
 }
