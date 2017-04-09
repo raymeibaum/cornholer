@@ -13,7 +13,7 @@ User.remove({}, function(err) {
 });
 
 var user1 = new User({
-  username: 'toddbundy',
+  username: 'Todd Bundy',
   passwordDigest: '84en98cb39b92',
   telephone: 4048372883
 
@@ -21,7 +21,7 @@ var user1 = new User({
 
 var game1 = new Game({
   winner: {
-      users: ['toddbundy', 'Jerry' ],
+      users: ['Tom', 'Jerry' ],
       score: 11
   },
   loser: {
