@@ -10,6 +10,7 @@ Clone and cd into the cornholer directory and run the following commands:
 
 ```shell
 npm install
+webpack
 npm start
 ```
 
