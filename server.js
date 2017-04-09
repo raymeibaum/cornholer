@@ -7,7 +7,10 @@ const session = require('express-session');
 const passport = require('passport');
 
 require('dotenv').config();
+require('./server/helpers/passport.js')(passport);
 
+const usersController = require('./server/controllers/users.js');
+const authController = require('./server/controllers/auth.js');
 
 app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
@@ -22,7 +25,8 @@ app.use(passport.session());
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
-const usersController = require('./server/controllers/users.js');
+
+app.use('/', authController(passport));
 app.use('/api/users/:username', usersController);
 
 
