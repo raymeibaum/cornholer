@@ -2,9 +2,9 @@ angular
   .module('project3')
   .service('AuthService', AuthService);
 
-AuthService.$inject = ['$http', '$q', '$location', '$rootScope'];
+AuthService.$inject = ['$http', '$q', '$state', '$rootScope'];
 
-function AuthService($http, $q, $location, $rootScope) {
+function AuthService($http, $q, $state, $rootScope) {
   const self = this;
 
   self.login = login;
@@ -22,19 +22,19 @@ function AuthService($http, $q, $location, $rootScope) {
     return $http.post('/logout');
   }
   function isLoggedIn() {
-    console.log('isLoggedIn called.')
     const deferred = $q.defer();
     $http
       .get('/loggedin')
-      .success(function(user) {
-        if (user) {
-          $rootScope.currentUser = user;
+      .then(function(response) {
+        if (response.data !== '0') {
+          $rootScope.currentUser = response.data;
           deferred.resolve();
         } else {
           deferred.reject();
-          $location.url('/login');
+          $state.go('login');
         }
       });
-      return deferred.promise;
+
+    return deferred.promise;
   }
 }
