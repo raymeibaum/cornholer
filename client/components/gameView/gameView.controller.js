@@ -1,4 +1,6 @@
-function GameViewController() {
+GameViewController.$inject = ['SocketService']
+
+function GameViewController(SocketService) {
   const vm = this;
 
 }

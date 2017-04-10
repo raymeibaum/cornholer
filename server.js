@@ -6,8 +6,14 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 
+// Socket.io
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
+
 require('dotenv').config();
 require('./server/helpers/passport.js')(passport);
+require('./server/helpers/socketio.js')(io);
 
 const usersController = require('./server/controllers/users.js');
 const authController = require('./server/controllers/auth.js');
@@ -29,6 +35,6 @@ app.use('/', authController(passport));
 app.use('/api/users/', usersController);
 
 const port = process.env.PORT;
-app.listen(port, function (){
+http.listen(port, function(){
   console.log(`Server listening on port: ${port}.`);
 });
