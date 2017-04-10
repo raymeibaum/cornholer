@@ -31,7 +31,7 @@ GameSchema.pre('save', function(next) {
 const UserSchema = new Schema({
   username: {
     type: String,
-    unique: True
+    unique: true
   },
   passwordDigest: String,
   telephone: Number,
