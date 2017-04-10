@@ -1,12 +1,8 @@
-<h1>User Info</h1>
+<h1>{{$ctrl.currentUser.username}}</h1>
 <ul>
 	<li ng-show="$ctrl.loading">
 		<strong>Loading...</strong>
 	</li>
-	Username: <strong>{{$ctrl.current.username}}</strong>
-	<!-- Needs to be fixed!! Isnt pulling in username-->
-    <a ui-sref="userSetting({ username: username })"> Click to edit your profile</a>
+</ul>
 
-  </ul>
-
-<pre>{{ $ctrl.current | json }}</pre>
+<pre>{{ $ctrl.currentUser | json }}</pre>
