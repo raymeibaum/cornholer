@@ -41,6 +41,10 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
     .state('userSetting', {
       url: '/users/:username/settings',
       template: '<user-setting></user-setting>'
+    })
+    .state('nav', {
+      url:'/nav',
+      tmeplate: '<nav></nav>'
     });
   $urlRouterProvider.otherwise('/');
 }
