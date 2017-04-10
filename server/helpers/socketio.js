@@ -32,5 +32,11 @@ function socketHelper(io) {
       io.emit('current-score', scores)
     });
 
+    socket.on('clear-score', function() {
+    scores.red = 0;
+    scores.black = 0;
+    io.emit('current-score', scores);
+  });
+
   });
 }

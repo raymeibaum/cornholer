@@ -2,28 +2,28 @@ AdminController.$inject = ['$rootScope', 'SocketService'];
 
 function AdminController($rootScope, SocketService) {
   const vm = this;
-  const socket = io();
 
   vm.adjustScore = adjustScore;
+  vm.clearScore = clearScore
   vm.scores = {
     red: 0,
     black: 0
   }
   activate();
 
-  socket.on('current-score', function(scores) {
-    console.log(scores);
-    vm.scores = scores;
-    $rootScope.$apply();
+  $rootScope.$watchCollection('scores', function(newScores) {
+    vm.scores = newScores;
   });
 
   function activate() {
-    console.log('activate');
     SocketService.getScore();
   }
 
   function adjustScore(adjustment) {
     SocketService.adjustScore(adjustment);
+  }
+  function clearScore() {
+    SocketService.clearScore();
   }
 }
 
