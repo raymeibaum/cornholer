@@ -28,6 +28,7 @@ function AuthService($http, $q, $state, $rootScope) {
       .then(function(response) {
         if (response.data !== '0') {
           $rootScope.currentUser = response.data;
+          console.log($rootScope.currentUser);
           deferred.resolve();
         } else {
           deferred.reject();
