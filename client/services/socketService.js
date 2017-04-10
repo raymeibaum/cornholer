@@ -10,9 +10,9 @@ function SocketService($rootScope) {
 
   self.adjustScore = adjustScore;
   self.getScore = getScore;
-  self.clearScore = clearScore
+  self.clearScore = clearScore;
 
-  socket.on('current-score', receiveScores)
+  socket.on('current-score', receiveScores);
 
   function receiveScores(scores) {
     $rootScope.scores = scores;

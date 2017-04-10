@@ -16,6 +16,7 @@ require('./server/helpers/passport.js')(passport);
 require('./server/helpers/socketio.js')(io);
 
 const usersController = require('./server/controllers/users.js');
+const gamesController = require('./server/controllers/games.js');
 const authController = require('./server/controllers/auth.js');
 
 app.use(logger('dev'));
@@ -33,6 +34,7 @@ mongoose.connect(process.env.MONGODB_URI);
 
 app.use('/', authController(passport));
 app.use('/api/users/', usersController);
+app.use('/api/games/', gamesController);
 
 const port = process.env.PORT;
 http.listen(port, function(){
