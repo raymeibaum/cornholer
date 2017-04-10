@@ -27,7 +27,6 @@ var game1 = new Game({
   }
 });
 
-
 game1.save(function(err){
    if(err) console.log(err);
 
