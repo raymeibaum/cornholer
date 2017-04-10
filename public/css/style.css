@@ -6,8 +6,6 @@ body {
   line-height: 1.5;*/
   min-height: 2000px;
   padding-top: 70px;
-
-
 }
 
 #red-jumbotron{
@@ -33,12 +31,7 @@ body {
 #game-view-header, #admin-header, #register-header, #login-header{
   text-align: center;
 }
-.black-plus, .red-plus{
 
-}
-.black-minus, .red-minus{
-
-}
 .btn-default:hover {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
@@ -69,3 +62,8 @@ body {
 .navbar-brand img {
   width: 70%;
 }
+
+a:hover{
+  font-size: 150%;
+}
+
