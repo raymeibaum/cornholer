@@ -14,7 +14,7 @@ function UsersService($http) {
     return $http.get('/api/users');
   }
 
-  function loadCurrent(id) {
-    return $http.get('/api/users/' + id);
+  function loadCurrent(username) {
+    return $http.get('/api/users/' + username);
   }
 }

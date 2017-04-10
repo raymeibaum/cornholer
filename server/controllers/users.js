@@ -3,38 +3,26 @@ const router = express.Router({mergeParams: true});
 
 const User = require('../models/user.js');
 
-// router.get('/', function userShow(req, res) {
-//   User.findOne({username: req.params.username})
-//     .then(function returnUser(user) {
-//       res.json(user);
-//     });
-// });
-
-
-// Get
-router.get('/', function indexAction(request, response) {
-  User.find(function(error, users) {
-    if(error) response.json({message: 'Could not find any users'});
-
-    response.json({users: users});
-  }).select('-__v');
+router.get('/:username', function userShow(req, res) {
+  User.findOne({username: req.params.username})
+    .exec(function returnUser(err, user) {
+      if (err) {
+        res.json(err);
+      } else {
+        res.json(user);
+      }
+    })
 });
 
-
-
-
-// // Show
-router.get('/:id', function showAction(request, response) {
-  var id = request.params.id;
-
-  User.findById({_id: id}, function(error, user) {
-    if(error) response.json({message: 'Could not find user b/c:' + error});
-
-    response.json({user: user});
-  }).select('-__v');
+router.get('/', function indexAction(req, res) {
+  User.find({})
+    .exec(function returnAllUsers(err, users) {
+      if (err) {
+        res.json({message: 'Could not find any users'})
+      } else {
+        res.json({users: users})
+      }
+    })
 });
-
-
-
 
 module.exports = router;

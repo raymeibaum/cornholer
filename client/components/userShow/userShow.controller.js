@@ -15,7 +15,8 @@ function UserShowController($stateParams, UsersService) {
     UsersService
       .loadCurrent($stateParams.username)
       .then(function resolve(response) {
-        vm.current = response.data.user;
+        console.log(response);
+        vm.current = response.data;
       });
   }
 
