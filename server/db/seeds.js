@@ -17,8 +17,9 @@ Game.remove({}, function(err) {
 });
 
 var game1 = new Game({
+  users: ['ray', 'dee', 'brandon', 'julian'],
   winner: {
-      users: ['ray', 'dee' ],
+      users: ['ray', 'julian' ],
       score: 11
   },
   loser: {
