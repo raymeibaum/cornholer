@@ -12,30 +12,25 @@ User.remove({}, function(err) {
     console.log(err);
 });
 
-var user1 = new User({
-  username: 'toddbundy',
-  passwordDigest: '84en98cb39b92',
-  telephone: 4048372883
-
+Game.remove({}, function(err) {
+  console.log(err)
 });
 
 var game1 = new Game({
   winner: {
-      users: ['toddbundy', 'Jerry' ],
+      users: ['ray', 'dee' ],
       score: 11
   },
   loser: {
-    users: ['Ben', 'Chuck'],
+    users: ['dee', 'brandon'],
     score: 2
   }
 });
 
-user1.games.push(game1);
-
-user1.save(function(err){
+game1.save(function(err){
    if(err) console.log(err);
 
-   console.log('User created!')
+   console.log('Game created!')
  });
 
 
