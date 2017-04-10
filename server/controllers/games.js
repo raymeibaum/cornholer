@@ -14,4 +14,15 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/:username', function(req, res) {
+  Game.find({users: req.params.username})
+    .exec(function(err, games) {
+      if (err) {
+        res.json({error: err})
+      } else {
+        res.json(games);
+      }
+    });
+})
+
 module.exports = router;
