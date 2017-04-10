@@ -6,4 +6,26 @@ body {
   line-height: 1.5;*/
   min-height: 2000px;
   padding-top: 70px;
+
+}
+
+#red-jumbotron{
+  background-color: red;
+}
+#black-jumbotron{
+  background-color: black;
+}
+#red-score{
+  color: white;
+    text-shadow: 2px 2px black;
+}
+#black-score{
+  color: white;
+    text-shadow: 2px 2px white;
+}
+#game-view-header, #admin-header{
+  text-align: center;
+}
+#text-center{
+  align-content: center;
 }
