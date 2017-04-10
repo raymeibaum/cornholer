@@ -3,22 +3,21 @@
   <div class="row text-center">
     <div class="col-xs-6">
       <div id="black-jumbotron" class="jumbotron">
-        <h1 id="black-score" class="text-center">0</h1>
-        <button class="btn btn-lg btn-default manipulator" id="black-plus">+</button>
-        <button class="btn btn-lg btn-default manipulator" id="black-minus">-</button>
+        <h1 id="black-score" class="text-center">{{$ctrl.scores.black}}</h1>
+        <button class="btn btn-lg btn-default manipulator" id="black-plus" ng-click="$ctrl.adjustScore('black-plus')">+</button>
+        <button class="btn btn-lg btn-default manipulator" id="black-minus" ng-click="$ctrl.adjustScore('black-minus')">-</button>
       </div>
     </div>
     <div class="col-xs-6">
       <div id="red-jumbotron" class="jumbotron">
-        <h1 id="red-score" class="text-center">0</h1>
-        <button class="btn btn-lg btn-default manipulator" id="red-plus">+</button>
-        <button class="btn btn-lg btn-default manipulator" id="red-minus">-</button>
+        <h1 id="red-score" class="text-center">{{$ctrl.scores.red}}</h1>
+        <button class="btn btn-lg btn-default manipulator" id="red-plus" ng-click="$ctrl.adjustScore('red-plus')">+</button>
+        <button class="btn btn-lg btn-default manipulator" id="red-minus" ng-click="$ctrl.adjustScore('red-minus')">-</button>
       </div>
     </div>
   </div>
-  <div class='text-center'>
-  <div class="btn-group">
-    <button class="btn btn-lg btn-default" id="clear-scores">Clear Scores</button>
+  <div class="text-center">
+    <button class="btn btn-lg btn-default" id="clear-scores" ng-click="$ctrl.clearScore()">Clear Scores</button>
     <button class="btn btn-lg btn-default" id="shift-list">Next Team</button>
   </div>
   </div>
