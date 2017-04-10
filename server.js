@@ -25,10 +25,8 @@ app.use(passport.session());
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
-
 app.use('/', authController(passport));
-app.use('/api/users/:username', usersController);
-
+app.use('/api/users/', usersController);
 
 const port = process.env.PORT;
 app.listen(port, function (){

@@ -1,1 +1,11 @@
 <h1>User's Settings</h1>
+
+<div>
+  Username: {{$ctrl.current.username}}
+  <br>
+  Password: {{$ctrl.current.passwordDigest}}
+  <br>
+  Telephone: {{$ctrl.current.telephone}}
+  <pre>{{ $ctrl | json }}</pre>
+
+</div>

@@ -3,11 +3,26 @@ const router = express.Router({mergeParams: true});
 
 const User = require('../models/user.js');
 
-router.get('/', function userShow(req, res) {
+router.get('/:username', function userShow(req, res) {
   User.findOne({username: req.params.username})
-    .then(function returnUser(user) {
-      res.json(user);
-    });
+    .exec(function returnUser(err, user) {
+      if (err) {
+        res.json(err);
+      } else {
+        res.json(user);
+      }
+    })
+});
+
+router.get('/', function indexAction(req, res) {
+  User.find({})
+    .exec(function returnAllUsers(err, users) {
+      if (err) {
+        res.json({message: 'Could not find any users'})
+      } else {
+        res.json({users: users})
+      }
+    })
 });
 
 module.exports = router;
