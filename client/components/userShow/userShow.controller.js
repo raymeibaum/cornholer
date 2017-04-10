@@ -1,22 +1,23 @@
-UserShowController.$inject = ['$stateParams', 'UsersService'];
+UserShowController.$inject = ['$rootScope','$stateParams', 'UsersService'];
 
-function UserShowController($stateParams, UsersService) {
+function UserShowController($rootScope, $stateParams, UsersService) {
   const vm = this;
 
-  vm.current = {};
+  vm.currentUser = $rootScope.currentUser;
 
   activate();
 
   function activate() {
     loadCurrentUser();
+
   }
 
   function loadCurrentUser() {
     UsersService
-      .loadCurrent($stateParams.username)
-      .then(function resolve(response) {
-        console.log(response);
-        vm.current = response.data;
+      .loadCurrent($rootScope.currentUser)
+      .then(function() {
+        vm.currentUser = $rootScope.currentUser;
+
       });
   }
 

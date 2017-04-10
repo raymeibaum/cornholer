@@ -1,15 +1,9 @@
-// function UserSettingController() {
-//   const vm = this;
-// }
-//
-// module.exports = UserSettingController;
+UserSettingController.$inject = ['$rootScope','$stateParams', 'UsersService'];
 
-UserSettingController.$inject = ['$stateParams', 'UsersService'];
-
-function UserSettingController($stateParams, UsersService) {
+function UserSettingController($rootScope, $stateParams, UsersService) {
 	const vm = this;
 
-	vm.current = {};
+	vm.currentUser = $rootScope.currentUser;
 
   activate();
 
@@ -17,16 +11,16 @@ function UserSettingController($stateParams, UsersService) {
     loadCurrentUser();
   }
 
-  function loadCurrentUser(id) {
+	function loadCurrentUser() {
     UsersService
-      .loadCurrent($stateParams.username)
-      .then(function resolve(response) {
-        vm.current = response.data.user;
+      .loadCurrent($rootScope.currentUser)
+      .then(function() {
+        vm.currentUser = $rootScope.currentUser;
+
       });
   }
 
 }
-
 
 
 module.exports = UserSettingController;

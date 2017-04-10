@@ -2,9 +2,9 @@ angular
   .module('project3')
   .service('UsersService', UsersService);
 
-UsersService.$inject = ['$http'];
+UsersService.$inject = ['$http', '$rootScope'];
 
-function UsersService($http) {
+function UsersService($http, $rootScope) {
   const self = this;
 
   self.loadAll = loadAll;
