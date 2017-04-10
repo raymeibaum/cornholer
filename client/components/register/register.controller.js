@@ -1,6 +1,6 @@
-RegisterController.$inject = ['$rootScope', '$location', 'AuthService'];
+RegisterController.$inject = ['$rootScope', '$state', 'AuthService'];
 
-function RegisterController($rootScope, $location, AuthService) {
+function RegisterController($rootScope, $state, AuthService) {
   const vm = this;
 
     vm.user = {};
@@ -9,9 +9,9 @@ function RegisterController($rootScope, $location, AuthService) {
     function register() {
       AuthService
         .register(vm.user)
-        .then(function(user) {
-          $rootScope.currentUser = user;
-          $location.url("/");
+        .then(function(response) {
+          $rootScope.currentUser = response.data;
+          $state.go('gameView');
         })
     }
 }

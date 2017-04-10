@@ -15,10 +15,12 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
     })
     .state('gameView', {
       url: '/',
-      template: '<game-view></game-view>'
-      // resolve: {
-      //   checkLoggedIn: 'AuthService.isLoggedIn'
-      // }
+      template: '<game-view></game-view>',
+      resolve: {
+        checkLoggedIn: function checkLoggedIn(AuthService) {
+          return AuthService.isLoggedIn();
+        }
+      }
     })
     .state('login', {
       url: '/login',
