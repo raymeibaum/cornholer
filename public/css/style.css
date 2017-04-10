@@ -66,11 +66,6 @@ body {
   width: 0%;
 }
 
-
-
-
-
-
-
-
-
+.navbar-brand img {
+  width: 70%;
+}
