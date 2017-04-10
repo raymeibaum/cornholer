@@ -11,14 +11,30 @@ const GameSchema = new Schema({
   loser: {
     users: Array,
     score: Number
+  },
+  timestamps: {
+    createdAt: Date,
+    updatedAt: Date
   }
 });
 
+GameSchema.pre('save', function(next) {
+  let now = new Date();
+  this.timestamps.updatedAt = now;
+
+  if (!this.timestamps.createdAt) {
+    this.timestamps.createdAt = now;
+  }
+  next();
+});
+
 const UserSchema = new Schema({
-  username: String,
+  username: {
+    type: String,
+    unique: True
+  },
   passwordDigest: String,
   telephone: Number,
-  games: [GameSchema],
   timestamps: {
     createdAt: Date,
     updatedAt: Date
