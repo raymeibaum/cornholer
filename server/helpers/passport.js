@@ -28,7 +28,8 @@ function passportHelpers(passport) {
           const createdPasswordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
           let newUser = new User({
             username: username,
-            passwordDigest: createdPasswordDigest
+            passwordDigest: createdPasswordDigest,
+            telephone: req.body.telephone
           });
           newUser.save(function(err, user) {
             if (err) { return done(err); }
