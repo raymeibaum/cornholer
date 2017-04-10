@@ -1,6 +1,6 @@
-LoginController.$inject = ['$rootScope', '$location', 'AuthService'];
+LoginController.$inject = ['$rootScope', '$state', 'AuthService'];
 
-function LoginController($rootScope, $location, AuthService) {
+function LoginController($rootScope, $state, AuthService) {
   const vm = this;
 
   vm.user = {};
@@ -9,9 +9,9 @@ function LoginController($rootScope, $location, AuthService) {
   function login() {
     AuthService
       .login(vm.user)
-      .then(function(user) {
-        $rootScope.currentUser = user;
-        $location.url("/");
+      .then(function(response) {
+        $rootScope.currentUser = response.data;
+        $state.go('gameView');
       });
   }
 }

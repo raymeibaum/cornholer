@@ -14,7 +14,8 @@ module.exports = function(passport) {
   });
 
   router.get("/loggedin", function(req, res) {
-    req.isAuthenticated() ? res.send(req.user) : null
+    console.log(req.isAuthenticated());
+    req.isAuthenticated() ? res.send(req.user) : res.send('0')
   });
 
   router.post('/logout', function(req, res) {
