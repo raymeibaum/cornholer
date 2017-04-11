@@ -3,6 +3,7 @@ GameViewController.$inject = ['$rootScope', 'SocketService']
 function GameViewController($rootScope, SocketService) {
   const vm = this;
 
+  vm.signupList = [];
   vm.scores = {
     red: 0,
     black: 0
@@ -13,8 +14,16 @@ function GameViewController($rootScope, SocketService) {
     vm.scores = newScores;
   });
 
+  $rootScope.$watchCollection('signupList', function(updatedList) {
+    vm.signupList = updatedList;
+  });
+
   function activate() {
-    SocketService.getScore();
+    SocketService
+      .getScore()
+
+    SocketService
+      .getList();
   }
 }
 

@@ -9,6 +9,7 @@ function AdminController($rootScope, SocketService) {
     red: 0,
     black: 0
   }
+
   activate();
 
   $rootScope.$watchCollection('scores', function(newScores) {
