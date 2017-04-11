@@ -16,7 +16,8 @@
     "url": "git+https://github.com/raymeibaum/project-3.git"
   },
   "engines": {
-    "node": "7.8.0"
+    "node": "7.8.0",
+    "npm": "4.2.0"
   },
   "keywords": [],
   "author": "",
