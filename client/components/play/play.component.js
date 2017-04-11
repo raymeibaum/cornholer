@@ -1,11 +1,11 @@
 const controller = require('./play.controller.js');
 const template = require('./play.html');
 
-const component = {
+const PlayComponent = {
   controller: controller,
   template: template
 };
 
 angular
   .module('project3')
-  .component('play', component);
+  .component('play', PlayComponent);
