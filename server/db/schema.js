@@ -14,18 +14,12 @@ const GameSchema = new Schema({
     score: Number
   },
   timestamps: {
-    createdAt: Date,
-    updatedAt: Date
+    createdAt: Date
   }
 });
 
 GameSchema.pre('save', function(next) {
-  let now = new Date();
-  this.timestamps.updatedAt = now;
-
-  if (!this.timestamps.createdAt) {
-    this.timestamps.createdAt = now;
-  }
+  this.timestamps.createdAt = new Date();
   next();
 });
 
@@ -52,10 +46,31 @@ UserSchema.pre('save', function(next) {
   next();
 });
 
+const ListSchema = new Schema({
+  user1: {
+    username: String,
+    telephone: Number
+  },
+  user2: {
+    username: String,
+    telephone: Number
+  },
+  timestamps: {
+    createdAt: Date
+  }
+})
+
+ListSchema.pre('save', function(next) {
+  this.timestamps.createdAt = new Date();
+  next();
+});
+
 const UserModel = mongoose.model('User', UserSchema);
 const GameModel = mongoose.model('Game', GameSchema);
+const ListModel = mongoose.model('List', ListSchema);
 
 module.exports = {
   User: UserModel,
-  Game: GameModel
+  Game: GameModel,
+  List: ListModel
 }

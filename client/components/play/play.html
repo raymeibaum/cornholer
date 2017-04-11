@@ -1,8 +1,26 @@
-<h1>This is where we will play!!</h1>
-  <select class="form-control">
-  <option>Julian</option>
-  <option>Ray</option>
-  <option>Brandon</option>
-  <option>Dee</option>
-  <option>Cornhole Colella</option>
-  </select>
+<div class="play">
+  <div class="page-header">
+    <h1>Sign up to Play</h1>
+  </div>
+  <div class="jumbotron">
+    <form class="form-inline" ng-submit="$ctrl.submitSignUp()">
+  <div class="form-group">
+    <label class="sr-only" for="user1">User1</label>
+    <input type="email" class="form-control" id="user1" name="user1" value="{{$ctrl.currentUser.username}}" disabled>
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="user2">User2</label>
+    <select class="form-control" ng-model="$ctrl.signup.user2" id="user2" required>
+      <option ng-repeat="user in $ctrl.users" ng-value="user">{{user.username}}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign up</button>
+</form>
+  </div>
+  <div class="page-header">
+    <h1>Queue</h1>
+  </div>
+  <div class="well" ng-repeat="team in $ctrl.signupList">
+    {{team.user1.username}} & {{team.user2.username}}
+  </div>
+</div>
