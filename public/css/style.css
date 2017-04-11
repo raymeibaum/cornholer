@@ -64,6 +64,23 @@ body {
 }
 
 a:hover{
-  font-size: 150%;
+  font-size: 101%;
+}
+p{
+  text-align:center;
+}
+h4{
+  text-align:center;
+}
+ul{
+  text-align:left;
+}
+li{
+   list-style-type:square;
+  padding:4px;
+  display:list-item;
+}
+.modal-backdrop.in{
+  z-index: 1020;
 }
 
