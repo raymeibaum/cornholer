@@ -37,7 +37,6 @@ function AdminController($rootScope, GamesService, SocketService) {
     SocketService.nextTeam(color);
   }
   function saveGame() {
-    console.log(vm.teams, vm.scores);
     if (vm.scores.black > vm.scores.red) {
       var game = {
         users: [
