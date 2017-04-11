@@ -83,4 +83,7 @@ li{
 .modal-backdrop.in{
   z-index: 1020;
 }
-
+#black-team{
+  color: white;
+    text-shadow: 2px 2px red;
+}
