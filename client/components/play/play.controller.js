@@ -9,15 +9,18 @@ function PlayController($rootScope, UsersService, SocketService) {
     user1: vm.currentUser
   }
   vm.submitSignUp = submitSignUp;
-  vm.list = [];
+  vm.signupList = [];
 
   activate()
 
-  $rootScope.$watchCollection('list', function(updatedList) {
-    vm.list = updatedList;
+  $rootScope.$watchCollection('signupList', function(updatedList) {
+    vm.signupList = updatedList;
   });
 
   function activate() {
+    SocketService
+      .getList();
+
     UsersService
       .loadAll()
       .then(function setUsers(response) {
@@ -25,7 +28,8 @@ function PlayController($rootScope, UsersService, SocketService) {
       })
   }
   function submitSignUp() {
-    // SocketService.
+    SocketService
+      .addToList(vm.signup);
   }
 }
 

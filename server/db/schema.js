@@ -47,7 +47,14 @@ UserSchema.pre('save', function(next) {
 });
 
 const ListSchema = new Schema({
-  users: [Object],
+  user1: {
+    username: String,
+    telephone: Number
+  },
+  user2: {
+    username: String,
+    telephone: Number
+  },
   timestamps: {
     createdAt: Date
   }

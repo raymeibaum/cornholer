@@ -1,3 +1,5 @@
+const List = require('../models/list.js')
+
 module.exports = socketHelper;
 
 const scores = {
@@ -23,20 +25,44 @@ function socketHelper(io) {
           scores.red--;
           break;
       }
-      console.log(scores);
       io.emit('current-score', scores);
     });
 
     socket.on('get-score', function() {
-      console.log(scores);
       io.emit('current-score', scores)
     });
+    socket.on('get-list', function() {
+      List.find({})
+        .exec(function(err, lists){
+          io.emit('current-list', lists);
+        })
+    })
 
     socket.on('clear-score', function() {
-    scores.red = 0;
-    scores.black = 0;
-    io.emit('current-score', scores);
-  });
+      scores.red = 0;
+      scores.black = 0;
+      io.emit('current-score', scores);
+    });
+
+    socket.on('signup', function(newTeam) {
+      console.log(newTeam);
+      const list = new List({
+        user1: {
+          username: newTeam.user1.username,
+          telephone: newTeam.user1.telephone
+        },
+        user2: {
+          username: newTeam.user2.username,
+          telephone: newTeam.user2.telephone
+        }
+      });
+      list.save(function() {
+        List.find({})
+          .exec(function(err, lists){
+            io.emit('current-list', lists);
+          })
+      })
+    })
 
   });
 }
