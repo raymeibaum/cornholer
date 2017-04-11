@@ -1,6 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy
 const User = require('../models/user.js');
 const bcrypt = require('bcrypt');
+const salt = '$2a$10$cih4zB2S.IGxyxopWFUB2e';
 
 module.exports = passportHelpers;
 
@@ -20,12 +21,12 @@ function passportHelpers(passport) {
       return done(null, false);
     }
     User.findOne({ username: username })
-      .exec(function(err, user) {
+      .exec(function gottaNameThings(err, user) {
         if (err) { return done(err); }
         if (user) {
           return done(null, false, { message: 'A user exists with that username.' });
         } else {
-          const createdPasswordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+          const createdPasswordDigest = bcrypt.hashSync(password, salt);
           let newUser = new User({
             username: username,
             passwordDigest: createdPasswordDigest,

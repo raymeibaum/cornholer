@@ -3,19 +3,21 @@
 
 <div>
   <h2 id='login-header'>Update</h2>
-  <form ng-submit="$ctrl.login()">
+  <form ng-submit="$ctrl.updateUser()">
     <div class="form-group">
       <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter Username" required ng-model="$ctrl.currentUser.username"/>
+      <input type="text" class="form-control" id="username" placeholder="Enter Username" required ng-model="$ctrl.user.username"/>
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" required ng-model="$ctrl.currentUser.passwordDigest" />
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="$ctrl.user.password" />
     </div>
     <div class="form-group">
       <label for="pwd">Telephone:</label>
-      <input type="telephone" class="form-control" id="phone" placeholder="Telephone" required ng-model="$ctrl.currentUser.telephone" />
+      <input type="telephone" class="form-control" id="phone" placeholder="Telephone" required ng-model="$ctrl.user.telephone" />
     </div>
-    <button type="submit" class="btn btn-danger">Submit</button>
+    <button type="submit" class="btn btn-primary">Update Info</button>
   </form>
+  <br>
+  <button class='btn btn-danger' ng-click="$ctrl.deleteUserFromCtrl(user)">Delete Account</button>
 </div>

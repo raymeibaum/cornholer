@@ -13,13 +13,24 @@ function AuthService($http, $q, $state, $rootScope) {
   self.isLoggedIn = isLoggedIn;
 
   function login(user) {
-    return $http.post('/login', user);
+    return $http
+      .post('/login', user)
+      .then(function setCurrentUser(response) {
+        console.log(response);
+        $rootScope.currentUser = response.data;
+        return response;
+      });
   }
   function register(user) {
     return $http.post('/register', user);
   }
   function logout() {
-    return $http.post('/logout');
+    return $http
+      .post('/logout')
+      .then(function removeCurrentUser() {
+        $rootScope.currentUser = null;
+        $rootScope.$emit('currentUserUpdated');
+      });
   }
   function isLoggedIn() {
     const deferred = $q.defer();
@@ -28,7 +39,7 @@ function AuthService($http, $q, $state, $rootScope) {
       .then(function(response) {
         if (response.data !== '0') {
           $rootScope.currentUser = response.data;
-          console.log($rootScope.currentUser);
+          $rootScope.$emit('currentUserUpdated');
           deferred.resolve();
         } else {
           deferred.reject();

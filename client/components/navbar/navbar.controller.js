@@ -4,15 +4,18 @@ function NavbarController($rootScope, $state, AuthService) {
   const vm = this;
 
   vm.logOut = logOut;
-  vm.currentUser = $rootScope.currentUser;
+  vm.currentUser = {};
+
+  $rootScope.$on('currentUserUpdated', function updateCurrentUser() {
+    vm.currentUser = $rootScope.currentUser;
+  });
 
   activate();
-
-  $rootScope.$on('$stateChangeSuccess', setCurrentUser)
 
   function activate() {
     console.log($rootScope.currentUser);
   }
+
   function logOut() {
     AuthService
       .logout()

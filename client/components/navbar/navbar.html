@@ -12,7 +12,7 @@
 
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right" ng-if="!$ctrl.currentUser">
+        <ul class="nav navbar-nav navbar-right" ng-if="!$ctrl.currentUser.username">
         <li>
       <a data-target="#myModal" data-toggle="modal" href="">Rules</a>
     </li><!-- Modal -->
@@ -53,7 +53,7 @@
           <li><a ui-sref="register">register</a></li>
 
         </ul>
-        <ul class="nav navbar-nav navbar-right" ng-if="$ctrl.currentUser">
+        <ul class="nav navbar-nav navbar-right" ng-if="$ctrl.currentUser.username">
         <li>
       <a data-target="#myModal" data-toggle="modal" href="">Rules</a>
     </li><!-- Modal -->
