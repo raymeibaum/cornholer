@@ -60,10 +60,34 @@ body {
 }
 
 .navbar-brand img {
-  width: 70%;
+  max-width: 215px;
 }
 
 a:hover{
-  font-size: 150%;
+  font-size: 101%;
 }
-
+p{
+  text-align:center;
+}
+h4{
+  text-align:center;
+}
+ul{
+  text-align:left;
+}
+li{
+   list-style-type:square;
+  padding:4px;
+  display:list-item;
+}
+.modal-backdrop.in{
+  z-index: 1020;
+}
+#black-team{
+  color: white;
+    text-shadow: 2px 2px red;
+}
+#red-team{
+  color: white;
+    text-shadow: 2px 2px black;
+}

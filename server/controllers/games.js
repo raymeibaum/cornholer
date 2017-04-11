@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
       if (err) {
         res.json({error: err});
       } else {
-        res.json(games);
+        res.json({games: games});
       }
     });
 });
@@ -20,9 +20,13 @@ router.get('/:username', function(req, res) {
       if (err) {
         res.json({error: err})
       } else {
-        res.json(games);
+        res.json({games: games});
       }
     });
 })
 
+router.post('/', function(req, res) {
+  const game = new Game(req.body);
+  game.save();
+});
 module.exports = router;

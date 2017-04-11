@@ -1,9 +1,12 @@
-UserShowController.$inject = ['$rootScope','$stateParams', 'UsersService'];
+UserShowController.$inject = ['$rootScope','$stateParams', 'UsersService', 'GamesService'];
 
-function UserShowController($rootScope, $stateParams, UsersService) {
+function UserShowController($rootScope, $stateParams, UsersService, GamesService) {
   const vm = this;
 
+
   vm.thisUser = {};
+  vm.games = [];
+
 
   activate();
 
@@ -16,6 +19,12 @@ function UserShowController($rootScope, $stateParams, UsersService) {
       .loadCurrent($stateParams.username)
       .then(function(response) {
         vm.thisUser = response.data;
+
+    GamesService
+      .getGames($stateParams.username)
+      .then(function setGames(response) {
+        vm.games = response.data.games;
+        console.log(vm.games);
       });
   }
 }

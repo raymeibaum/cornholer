@@ -15,12 +15,7 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
     })
     .state('gameView', {
       url: '/',
-      template: '<game-view></game-view>',
-      resolve: {
-        checkLoggedIn: function checkLoggedIn(AuthService) {
-          return AuthService.isLoggedIn();
-        }
-      }
+      template: '<game-view></game-view>'
     })
     .state('login', {
       url: '/login',
@@ -32,7 +27,12 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
     })
     .state('play', {
       url: '/play',
-      template: '<play></play>'
+      template: '<play></play>',
+      resolve: {
+        checkLoggedIn: function checkLoggedIn(AuthService) {
+          return AuthService.isLoggedIn();
+        }
+      }
     })
     .state('userShow', {
       url: '/users/:username',
@@ -40,7 +40,12 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
     })
     .state('userSetting', {
       url: '/users/:username/settings',
-      template: '<user-setting></user-setting>'
+      template: '<user-setting></user-setting>',
+      resolve: {
+        checkLoggedIn: function checkLoggedIn(AuthService) {
+          return AuthService.isLoggedIn();
+        }
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

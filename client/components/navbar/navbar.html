@@ -13,10 +13,83 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right" ng-if="!$ctrl.currentUser.username">
+        <li>
+      <a data-target="#myModal" data-toggle="modal" href="">Rules</a>
+    </li><!-- Modal -->
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal" type="button">&times;</button>
+          <h4 class="modal-title">Cornhole Rules</h4>
+        </div>
+        <p><strong>SET UP</strong></p>
+        <ul>
+          <li>27' front edge to front edge of board</li>
+          <li>Teammates stand directly opposite each other at opposing ends</li>
+          <li>Each team gets 4 bags (same color) to throw per frame (round) in an underhand pitching motion</li>
+          <li>Each team alternates throws until all bags are thrown to determine score</li>
+          <li>Team which scored points lead off next frame</li>
+          <li>Players throw from behind the front edge of the board to avoid a foot fault</li>
+          <li>A foot fault or player throwing out of turn results in the thrown bag removed from the playing surface</li>
+        </ul>
+        <p><strong>SCORING</strong></p><strong></strong>
+        <ul>
+          <li>Bag on the board is <strong>1 point</strong></li>
+          <li>Bag in the hole is <strong>3 points</strong></li>
+          <li>Bags must land and stay on the board (without touching the ground) or go through the hole to score</li>
+          <li>Opposing points cancel each other out.</li>
+          <li><strong>For example:</strong> Red team has 3 bags on the board (3 points) and one bag in the hole (3 points) totaling 6 points. Black team has 3 bags on the board (3 points) and one bag off the board (0 points) totaling 3 points. Red team wins the frame with 3 points (6 points minus 3 points).</li>
+          <li>Knocking an opponent's bag off the board is allowed.</li>
+          <li>A bag that hits the ground before landing on the board surface does not count and is removed from the field of play before the next throw.</li>
+        </ul>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+  </div>
           <li><a ui-sref="login">login</a></li>
           <li><a ui-sref="register">register</a></li>
+
         </ul>
         <ul class="nav navbar-nav navbar-right" ng-if="$ctrl.currentUser.username">
+        <li>
+      <a data-target="#myModal" data-toggle="modal" href="">Rules</a>
+    </li><!-- Modal -->
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal" type="button">&times;</button>
+          <h4 class="modal-title">Cornhole Rules</h4>
+        </div>
+        <p><strong>SET UP</strong></p>
+        <ul>
+          <li>27' front edge to front edge of board</li>
+          <li>Teammates stand directly opposite each other at opposing ends</li>
+          <li>Each team gets 4 bags (same color) to throw per frame (round) in an underhand pitching motion</li>
+          <li>Each team alternates throws until all bags are thrown to determine score</li>
+          <li>Team which scored points lead off next frame</li>
+          <li>Players throw from behind the front edge of the board to avoid a foot fault</li>
+          <li>A foot fault or player throwing out of turn results in the thrown bag removed from the playing surface</li>
+        </ul>
+        <p><strong>SCORING</strong></p><strong></strong>
+        <ul>
+          <li>Bag on the board is <strong>1 point</strong></li>
+          <li>Bag in the hole is <strong>3 points</strong></li>
+          <li>Bags must land and stay on the board (without touching the ground) or go through the hole to score</li>
+          <li>Opposing points cancel each other out.</li>
+          <li><strong>For example:</strong> Red team has 3 bags on the board (3 points) and one bag in the hole (3 points) totaling 6 points. Black team has 3 bags on the board (3 points) and one bag off the board (0 points) totaling 3 points. Red team wins the frame with 3 points (6 points minus 3 points).</li>
+          <li>Knocking an opponent's bag off the board is allowed.</li>
+          <li>A bag that hits the ground before landing on the board surface does not count and is removed from the field of play before the next throw.</li>
+        </ul>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+  </div>
           <li><a ui-sref="userShow({username: $ctrl.currentUser.username})">profile</a></li>
           <li><a ui-sref="userSetting({username: $ctrl.currentUser.username})">account settings</a></li>
           <li><a ng-click="$ctrl.logOut()">logout</a></li>
