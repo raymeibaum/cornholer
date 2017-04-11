@@ -17,8 +17,8 @@
           <li><a ui-sref="register">register</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right" ng-if="$ctrl.currentUser">
-          <li><a ui-sref="userShow">profile</a></li>
-          <li><a ui-sref="userSetting">account settings</a></li>
+          <li><a ui-sref="userShow({username: $ctrl.currentUser.username})">profile</a></li>
+          <li><a ui-sref="userSetting({username: $ctrl.currentUser.username})">account settings</a></li>
           <li><a ng-click="$ctrl.logOut()">logout</a></li>
         </ul>
       </div>
