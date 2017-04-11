@@ -3,14 +3,16 @@
     <h1>Score</h1>
   </div>
   <div class="row scoreboard">
-    <div class="col-xs-6">
+    <div class="col-xs-6 text-center">
       <div id="black-jumbotron" class="jumbotron">
-        <h1 id="black-score" class="text-center">{{$ctrl.scores.black}}</h1>
+        <h3 id="black-team">{{$ctrl.teams.black.user1}} & {{$ctrl.teams.black.user2}}</h3>
+        <h1 id="black-score">{{$ctrl.scores.black}}</h1>
       </div>
     </div>
-    <div class="col-xs-6">
+    <div class="col-xs-6 text-center">
       <div id="red-jumbotron" class="jumbotron">
-        <h1 id="red-score" class="text-center">{{$ctrl.scores.red}}</h1>
+        <h3 id="red-team">{{$ctrl.teams.red.user1}} & {{$ctrl.teams.red.user2}}</h3>
+        <h1 id="red-score">{{$ctrl.scores.red}}</h1>
       </div>
     </div>
   </div>

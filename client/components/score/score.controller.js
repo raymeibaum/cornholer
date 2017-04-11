@@ -8,15 +8,22 @@ function ScoreController($rootScope, SocketService) {
     black: 0
   }
 
+  vm.teams = {};
+
   activate();
+
 
   $rootScope.$watchCollection('scores', function(newScores) {
     vm.scores = newScores;
   });
 
+  $rootScope.$watchCollection('teams', function(newTeams) {
+    vm.teams = newTeams;
+  });
+
   function activate() {
-    SocketService
-      .getScore()
+    SocketService.getScore();
+    SocketService.getTeams();
   }
 }
 
