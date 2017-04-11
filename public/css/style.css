@@ -60,7 +60,7 @@ body {
 }
 
 .navbar-brand img {
-  width: 70%;
+  max-width: 215px;
 }
 
 a:hover{

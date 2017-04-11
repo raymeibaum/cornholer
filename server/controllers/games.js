@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
       if (err) {
         res.json({error: err});
       } else {
-        res.json(games);
+        res.json({games: games});
       }
     });
 });
@@ -20,7 +20,7 @@ router.get('/:username', function(req, res) {
       if (err) {
         res.json({error: err})
       } else {
-        res.json(games);
+        res.json({games: games});
       }
     });
 })
