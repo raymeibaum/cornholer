@@ -1,8 +1,8 @@
-<h1>{{$ctrl.currentUser.username}}</h1>
+<h1>{{$ctrl.thisUser.username}}</h1>
 <ul>
 	<li ng-show="$ctrl.loading">
 		<strong>Loading...</strong>
 	</li>
 </ul>
 
-<pre>{{ $ctrl.currentUser | json }}</pre>
+<pre>{{ $ctrl.thisUser | json }}</pre>
