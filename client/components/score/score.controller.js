@@ -17,9 +17,13 @@ function ScoreController($rootScope, SocketService) {
     vm.scores = newScores;
   });
 
+  $rootScope.$watchCollection('teams', function(newTeams) {
+    vm.teams = newTeams;
+  });
+
   function activate() {
-    SocketService
-      .getScore()
+    SocketService.getScore();
+    SocketService.getTeams();
   }
 }
 

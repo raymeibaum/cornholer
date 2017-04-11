@@ -14,6 +14,7 @@ function SocketService($rootScope) {
   self.getList = getList;
   self.getScore = getScore;
   self.getTeams = getTeams;
+  self.nextTeam = nextTeam;
 
   socket.on('current-score', receiveScores);
   socket.on('current-list', receiveList);
@@ -28,12 +29,18 @@ function SocketService($rootScope) {
   function clearScore() {
     socket.emit('clear-score');
   };
-  function getScore() {
-    socket.emit('get-score');
-  };
   function getList() {
     socket.emit('get-list')
   };
+  function getScore() {
+    socket.emit('get-score');
+  };
+  function getTeams() {
+    socket.emit('get-teams');
+  };
+  function nextTeam(color) {
+    socket.emit('new-team', color);
+  }
   function receiveList(signupList) {
     $rootScope.signupList = signupList;
     $rootScope.$apply();
