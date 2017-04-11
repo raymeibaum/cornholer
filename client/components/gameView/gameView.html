@@ -1,17 +1,5 @@
 <div class='game-view'>
-  <h1 id='game-view-header'>Game View</h1>
-  <div class="row scoreboard">
-    <div class="col-xs-6">
-      <div id="black-jumbotron" class="jumbotron">
-        <h1 id="black-score" class="text-center">{{$ctrl.scores.black}}</h1>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <div id="red-jumbotron" class="jumbotron">
-        <h1 id="red-score" class="text-center">{{$ctrl.scores.red}}</h1>
-      </div>
-    </div>
-  </div>
+  <score></score>
   <a ui-sref="play" href="/play" class='signup'>Sign Up</a>
   <queue></queue>
 </div>

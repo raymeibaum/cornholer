@@ -5,6 +5,7 @@ function AdminController($rootScope, SocketService) {
 
   vm.adjustScore = adjustScore;
   vm.clearScore = clearScore
+  vm.saveGame = saveGame
   vm.scores = {
     red: 0,
     black: 0
@@ -25,6 +26,9 @@ function AdminController($rootScope, SocketService) {
   }
   function clearScore() {
     SocketService.clearScore();
+  }
+  function saveGame() {
+
   }
 }
 
