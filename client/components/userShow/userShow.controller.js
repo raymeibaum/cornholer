@@ -19,6 +19,7 @@ function UserShowController($rootScope, $stateParams, UsersService, GamesService
       .loadCurrent($stateParams.username)
       .then(function(response) {
         vm.thisUser = response.data;
+      });
 
     GamesService
       .getGames($stateParams.username)
