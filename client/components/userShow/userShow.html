@@ -1,8 +1,22 @@
-<h1>{{$ctrl.currentUser.username}}</h1>
-<ul>
-	<li ng-show="$ctrl.loading">
-		<strong>Loading...</strong>
-	</li>
-</ul>
-
-<pre>{{ $ctrl.currentUser | json }}</pre>
+<div class="user-show">
+  <div class="page-header">
+    <h1 ng-bind="$ctrl.currentUser.username"></h1>
+  </div>
+  <h3>Game History</h3>
+  <div class="jumbotron text-center" ng-repeat="game in $ctrl.games | orderBy: 'timestamps.createdAt'">
+    <div class="row">
+      <div class="col-xs-5">
+      <h1 ng-bind="game.winner.score"></h1>
+      <p><a ui-sref="userShow({username: game.winner.users[0]})">{{game.winner.users[0]}}</a> & <a ui-sref="userShow({username: game.winner.users[1]})">{{game.winner.users[1]}}</a></p>
+      </div>
+      <div class="col-sm-2">
+      <h1>vs</h1>
+      </div>
+      <div class="col-sm-5">
+        <h1 ng-bind="game.loser.score"></h1>
+        <p><a ui-sref="userShow({username: game.loser.users[0]})">{{game.loser.users[0]}}</a> & <a ui-sref="userShow({username: game.loser.users[1]})">{{game.loser.users[1]}}</a></p>
+      </div>
+    </div>
+    <small class="pull-right"><strong>Played:</strong> {{game.timestamps.createdAt | date: 'medium'}}</small>
+  </div>
+</div>
