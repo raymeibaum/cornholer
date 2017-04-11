@@ -37,39 +37,29 @@ function AdminController($rootScope, GamesService, SocketService) {
     SocketService.nextTeam(color);
   }
   function saveGame() {
-    if (vm.scores.black > vm.scores.red) {
-      var game = {
-        users: [
-          vm.teams.black.user1,
-          vm.teams.black.user2,
-          vm.teams.red.user1,
-          vm.teams.red.user2],
-        winner: {
-          users: [vm.teams.black.user1, vm.teams.black.user2],
-          score: vm.scores.black
-        },
-        loser: {
-          users: [vm.teams.red.user1, vm.teams.red.user2],
-          score: vm.scores.red
-        }
-      }
-    } else {
-      var game = {
-        users: [
-          vm.teams.black.user1,
-          vm.teams.black.user2,
-          vm.teams.red.user1,
-          vm.teams.red.user2],
-        winner: {
-          users: [vm.teams.red.user1, vm.teams.red.user2],
-          score: vm.scores.red
-        },
-        loser: {
-          users: [vm.teams.black.user1, vm.teams.black.user2],
-          score: vm.scores.black
-        }
-      }
+    const red = vm.teams.red;
+    const black = vm.teams.black;
+    const users = [
+      black.user1,
+      black.user2,
+      red.user1,
+      red.user2
+    ];
+    const blackTeam = {
+      users: [black.user1, black.user2],
+      score: vm.scores.black
     }
+    const redTeam = {
+      users: [red.user1, red.user2],
+      score: vm.scores.red
+    }
+
+    const isBlackWinner = vm.scores.black > vm.scores.red;
+
+    const game = { users };
+    game.winners = isBlackWinner ? blackTeam : redTeam;
+    game.losers = isBlackWinner ? redTeam : blackTeam;
+
     GamesService
       .saveGame(game)
       .then(function() {

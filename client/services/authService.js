@@ -16,8 +16,8 @@ function AuthService($http, $q, $state, $rootScope) {
     return $http
       .post('/login', user)
       .then(function setCurrentUser(response) {
-        console.log(response);
         $rootScope.currentUser = response.data;
+        $rootScope.$emit('currentUserUpdated');
         return response;
       });
   }
