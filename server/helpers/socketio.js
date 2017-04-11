@@ -16,7 +16,6 @@ const currentTeams = {
     user2: 'ray'
   }
 };
-
 function socketHelper(io) {
   io.on('connection', function(socket){
 
@@ -65,7 +64,7 @@ function socketHelper(io) {
               getAndSendList();
             }
           });
-          break;
+        break;
         case 'red' :
           List.findOneAndRemove({})
             .exec(function(err, team) {
@@ -78,7 +77,6 @@ function socketHelper(io) {
             });
           break;
       }
-
     });
 
     socket.on('signup', function(newTeam) {
@@ -96,10 +94,9 @@ function socketHelper(io) {
         List.find({})
           .exec(function(err, lists){
             io.emit('current-list', lists);
-          })
-      })
-    })
-
+          });
+      });
+    });
   });
 
   function clearScores() {

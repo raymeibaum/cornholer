@@ -8,8 +8,12 @@ function GamesService($http) {
   const self = this;
 
   self.getGames = getGames;
+  self.saveGame = saveGame;
 
   function getGames(username) {
     return $http.get('/api/games/' + username);
+  }
+  function saveGame(game) {
+    return $http.post('/api/games/', game);
   }
 }
