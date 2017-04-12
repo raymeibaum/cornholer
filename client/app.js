@@ -29,9 +29,9 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
       url: '/play',
       template: '<play></play>',
       resolve: {
-        checkLoggedIn: function checkLoggedIn(AuthService) {
+        checkLoggedIn: ['AuthService', function checkLoggedIn(AuthService) {
           return AuthService.isLoggedIn();
-        }
+        }]
       }
     })
     .state('userShow', {
@@ -42,9 +42,9 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
       url: '/users/:username/settings',
       template: '<user-setting></user-setting>',
       resolve: {
-        checkLoggedIn: function checkLoggedIn(AuthService) {
+        checkLoggedIn: ['AuthService', function checkLoggedIn(AuthService) {
           return AuthService.isLoggedIn();
-        }
+        }]
       }
     });
   $urlRouterProvider.otherwise('/');
