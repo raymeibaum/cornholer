@@ -38,4 +38,4 @@ Wireframes can be found [**here**](https://wireframe.cc/kOlQoF).
 User stories can be found [**here**](https://trello.com/b/wSLbAx39/cornholer).
 
 ## ERDs
-ERDs can be found [**here**](https://www.lucidchart.com/invitations/accept/971a37b1-200b-43c3-acad-e6689dff17b7).
+ERDs can be found [**here**](https://i.imgur.com/txASQY6.png).
