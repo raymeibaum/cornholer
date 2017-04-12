@@ -63,6 +63,11 @@ body {
 }
 
 
+.navbar-brand img {
+  margin-top: 5px;
+  max-width: 215px;
+}
+
 a:hover{
   font-size: 101%;
 }
@@ -76,7 +81,7 @@ ul{
   text-align:left;
 }
 li{
-   list-style-type:square;
+  list-style-type:square;
   padding:4px;
   display:list-item;
 }
@@ -85,9 +90,12 @@ li{
 }
 #black-team{
   color: white;
-    text-shadow: 2px 2px red;
+  text-shadow: 2px 2px red;
 }
 #red-team{
   color: white;
-    text-shadow: 2px 2px black;
+  text-shadow: 2px 2px black;
+}
+img.banner-gif {
+  margin: 0 auto;
 }
