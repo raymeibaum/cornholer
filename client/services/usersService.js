@@ -10,7 +10,7 @@ function UsersService($http) {
   self.loadAll = loadAll;
   self.loadCurrent = loadCurrent;
   self.updateCurrent = updateCurrent;
-  self.deleteUserFromService = deleteUserFromService;
+  self.deleteUser = deleteUser;
 
   function loadAll() {
     return $http.get('/api/users');
@@ -25,7 +25,8 @@ function UsersService($http) {
 
     return $http.patch(url, data);
   }
-  function deleteUserFromService(user) {
+  
+  function deleteUser(username) {
     return $http.delete('/api/users/' + username);
   }
 }

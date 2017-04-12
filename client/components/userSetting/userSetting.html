@@ -1,12 +1,13 @@
-<h1>User's Settings</h1>
 
-
-<div>
-  <h2 id='login-header'>Update</h2>
+<div class="queue">
+  <div class="page-header">
+    <h1>Settings</h1>
+  </div>
   <form ng-submit="$ctrl.updateUser()">
     <div class="form-group">
       <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter Username" required ng-model="$ctrl.user.username"/>
+      <br>
+      {{$ctrl.user.username}}
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
@@ -19,5 +20,5 @@
     <button type="submit" class="btn btn-primary">Update Info</button>
   </form>
   <br>
-  <button class='btn btn-danger' ng-click="$ctrl.deleteUserFromCtrl(user)">Delete Account</button>
+  <button class='btn btn-danger' ng-click="$ctrl.deleteUser()">Delete Account</button>
 </div>

@@ -3,9 +3,9 @@ UserSettingController.$inject = ['$rootScope','$stateParams', 'UsersService', '$
 function UserSettingController($rootScope, $stateParams, UsersService, $state) {
 	const vm = this;
 
-	vm.deleteUserFromCtrl = deleteUserFromCtrl;
+	vm.deleteUser = deleteUser;
 	vm.updateUser = updateUser;
-	vm.user = {};
+	vm.user = [];
 
 	// vm.currentUser = $rootScope.currentUser;
 
@@ -35,13 +35,12 @@ function UserSettingController($rootScope, $stateParams, UsersService, $state) {
 			});
 	}
 
-	function deleteUserFromCtrl(user) {
+	function deleteUser(user) {
 		console.log(user)
 		UsersService
-			.deleteUserFromService(user)
+			.deleteUser($stateParams.username)
 			.then(function(response){
-				var index = vm.users.indexOf(user);
-				vm.users.splice(index, 1);
+
 				$state.go('login');
 			});
 	}
