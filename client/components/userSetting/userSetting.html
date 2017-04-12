@@ -14,11 +14,20 @@
       <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="$ctrl.user.password" />
     </div>
     <div class="form-group">
+      <label for="cpwd">Confirm Password</label>
+      <input type="password" class="form-control" id="cpwd" placeholder="Enter password" ng-model="$ctrl.user.confirmPassword"  />
+    </div>
+    <div class="form-group">
       <label for="pwd">Telephone:</label>
       <input type="telephone" class="form-control" id="phone" placeholder="Telephone" required ng-model="$ctrl.user.telephone" />
     </div>
-    <button type="submit" class="btn btn-primary">Update Info</button>
+    <button type="submit" class="btn btn-primary" ng-disabled="$ctrl.user.password !== $ctrl.user.confirmPassword">Update Info</button>
   </form>
   <br>
   <button class='btn btn-danger' ng-click="$ctrl.deleteUser()">Delete Account</button>
 </div>
+
+<script>
+
+
+</script>
