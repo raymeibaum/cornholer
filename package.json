@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "webpack:deploy": "webpack --config=./webpack.config.js -p",
+    "webpack:deploy": "webpack --config=./webpack.config.js",
     "heroku-postbuild": "npm run webpack:deploy",
     "start:dev:server": "nodemon server.js",
     "start:dev:client": "webpack --watch"
