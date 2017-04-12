@@ -14,7 +14,7 @@
       <option ng-repeat="user in $ctrl.users" ng-value="user">{{user.username}}</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary">Sign up</button>
+  <button type="submit" class="btn btn-primary" ng-disabled="!$ctrl.signup.user2">Sign up</button>
 </form>
   </div>
   <queue></queue>
