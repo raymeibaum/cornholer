@@ -28,5 +28,6 @@ router.get('/:username', function(req, res) {
 router.post('/', function(req, res) {
   const game = new Game(req.body);
   game.save();
+  res.sendStatus(200);
 });
 module.exports = router;

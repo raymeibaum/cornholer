@@ -25,7 +25,6 @@ function UserShowController($rootScope, $stateParams, UsersService, GamesService
       .getGames($stateParams.username)
       .then(function setGames(response) {
         vm.games = response.data.games;
-        console.log(vm.games);
       });
   }
 }

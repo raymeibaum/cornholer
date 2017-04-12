@@ -21,7 +21,7 @@
   </div>
   <div class="text-center">
     <button class="btn btn-lg btn-default" ng-click="$ctrl.clearScore()">Clear Scores</button>
-    <button class="btn btn-lg btn-default" ng-click="$ctrl.saveGame()">Save Game</button>
+    <button class="btn btn-lg btn-default" ng-show="$ctrl.validGame()" ng-click="$ctrl.saveGame()">Save Game</button>
   </div>
   <queue></queue>
 </div>

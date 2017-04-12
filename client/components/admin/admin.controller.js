@@ -3,28 +3,42 @@ AdminController.$inject = ['$rootScope', 'GamesService', 'SocketService'];
 function AdminController($rootScope, GamesService, SocketService) {
   const vm = this;
 
-  vm.adjustScore = adjustScore;
-  vm.clearScore = clearScore
-  vm.saveGame = saveGame
-  vm.nextTeam = nextTeam
-  vm.scores = {
-    red: 0,
-    black: 0
+  const defaults = {
+    scores: {
+      red: 0,
+      black: 0
+    },
+    teams: {
+      red: {},
+      black: {}
+    }
   }
-  vm.teams = {};
+
+  vm.adjustScore = adjustScore;
+  vm.clearScore = clearScore;
+  vm.saveGame = saveGame;
+  vm.nextTeam = nextTeam;
+  vm.scores = defaults.scores;
+  vm.teams = defaults.teams;
+
+  vm.scoresNotZero = false;
+  vm.twoTeamsPlaying = false;
+
+  vm.validGame = validGame
 
   activate();
 
   $rootScope.$watchCollection('scores', function(newScores) {
-    vm.scores = newScores;
+    vm.scores = newScores || defaults.scores;
   });
 
   $rootScope.$watchCollection('teams', function(newTeams) {
-    vm.teams = newTeams;
+    vm.teams = newTeams || defaults.teams;
   });
 
   function activate() {
     SocketService.getScore();
+    SocketService.getTeams();
   }
 
   function adjustScore(adjustment) {
@@ -76,6 +90,13 @@ function AdminController($rootScope, GamesService, SocketService) {
       .then(function() {
         SocketService.clearScore();
       });
+  }
+
+  function validGame() {
+    vm.scoresNotZero = vm.scores.red > 0 || vm.scores.black > 0;
+    vm.twoTeamsPlaying = vm.teams.red.user1 !== null && vm.teams.black.user1 !== null;
+
+    return vm.scoresNotZero && vm.twoTeamsPlaying;
   }
 }
 
