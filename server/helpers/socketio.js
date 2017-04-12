@@ -8,12 +8,12 @@ const scores = {
 };
 const currentTeams = {
   black: {
-    user1: 'ray',
-    user2: 'ray'
+    user1: null,
+    user2: null
   },
   red: {
-    user1: 'ray',
-    user2: 'ray'
+    user1: null,
+    user2: null
   }
 };
 function socketHelper(io) {

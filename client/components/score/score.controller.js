@@ -7,8 +7,7 @@ function ScoreController($rootScope, SocketService) {
     red: 0,
     black: 0
   }
-
-  vm.teams = {};
+  vm.teams = null;
 
   activate();
 
