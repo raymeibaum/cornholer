@@ -29,3 +29,5 @@ User stories can be found [**here**](https://trello.com/b/wSLbAx39/cornholer).
 - MEAN Stack (MongoDB, Express, AngularJS, Node.JS)
 
 ## ERDs
+ERDs can be found
+[**here**](https://www.lucidchart.com/invitations/accept/971a37b1-200b-43c3-acad-e6689dff17b7).
