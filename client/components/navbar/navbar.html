@@ -13,16 +13,16 @@
       <div id="navbar" class="navbar-collapse collapse">
 
         <ul class="nav navbar-nav navbar-right" ng-hide="$ctrl.currentUser.username">
-          <li><a data-target="#myModal" data-toggle="modal" href="">rules</a></li>
-          <li><a ui-sref="login">login</a></li>
+          <li><a data-target="#myModal" data-toggle="modal" href="">Rules</a></li>
+          <li><a ui-sref="login">Login</a></li>
           <li><a ui-sref="register">register</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right" ng-show="$ctrl.currentUser.username">
-          <li><a data-target="#myModal" data-toggle="modal" href="">rules</a></li>
-          <li><a ui-sref="userShow({username: $ctrl.currentUser.username})">profile</a></li>
-          <li><a ui-sref="userSetting({username: $ctrl.currentUser.username})">account settings</a></li>
-          <li><a ng-click="$ctrl.logOut()">logout</a></li>
+          <li><a data-target="#myModal" data-toggle="modal" href="">Rules</a></li>
+          <li><a ui-sref="userShow({username: $ctrl.currentUser.username})">Profile</a></li>
+          <li><a ui-sref="userSetting({username: $ctrl.currentUser.username})">Account Settings</a></li>
+          <li><a ng-click="$ctrl.logOut()">Logout</a></li>
         </ul>
       </div>
     </div>

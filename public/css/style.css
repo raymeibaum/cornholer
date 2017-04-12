@@ -4,20 +4,24 @@ body {
   /*max-width: 700px;
   margin: 0 auto;
   line-height: 1.5;*/
-  min-height: 2000px;
   padding-top: 70px;
+}
+
+.navbar-brand img {
+  max-width: 215px;
+  margin-top: 5px;
 }
 
 #red-jumbotron{
   background-color: red;
   border-style: solid;
-  border-radius: 75px;
+  border-radius: 20px;
   border-color: black;
 }
 #black-jumbotron{
   background-color: black;
   border-style: solid;
-  border-radius: 75px;
+  border-radius: 20px;
   border-color: red;
 }
 #red-score{
@@ -31,8 +35,7 @@ body {
 #game-view-header, #admin-header, #register-header, #login-header{
   text-align: center;
 }
-
-.btn-default:hover {
+  .btn-default:hover {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
@@ -58,6 +61,7 @@ body {
 .btn-danger:hover:after{
   width: 0%;
 }
+
 
 .navbar-brand img {
   margin-top: 5px;
