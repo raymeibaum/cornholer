@@ -1,6 +1,6 @@
-NavbarController.$inject = ['$rootScope', '$state', 'AuthService'];
+NavigationController.$inject = ['$rootScope', '$state', 'AuthService'];
 
-function NavbarController($rootScope, $state, AuthService) {
+function NavigationController($rootScope, $state, AuthService) {
   const vm = this;
 
   vm.logOut = logOut;
@@ -13,7 +13,7 @@ function NavbarController($rootScope, $state, AuthService) {
   activate();
 
   function activate() {
-    console.log($rootScope.currentUser);
+    
   }
 
   function logOut() {
@@ -29,4 +29,4 @@ function NavbarController($rootScope, $state, AuthService) {
   }
 }
 
-module.exports = NavbarController;
+module.exports = NavigationController;
