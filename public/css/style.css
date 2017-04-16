@@ -7,35 +7,29 @@ body {
   padding-top: 70px;
 }
 
-.navbar-brand img {
+img.navbar-brand {
   max-width: 215px;
   margin-top: 5px;
 }
 
-#red-jumbotron{
+div.red-jumbotron {
   background-color: red;
   border-style: solid;
   border-radius: 20px;
   border-color: black;
+  color: white;
+  text-shadow: 2px 2px black;
 }
-#black-jumbotron{
+div.black-jumbotron {
   background-color: black;
   border-style: solid;
   border-radius: 20px;
   border-color: red;
-}
-#red-score{
   color: white;
-    text-shadow: 2px 2px black;
+  text-shadow: 2px 2px red;
 }
-#black-score{
-  color: white;
-    text-shadow: 2px 2px red;
-}
-#game-view-header, #admin-header, #register-header, #login-header{
-  text-align: center;
-}
-  .btn-default:hover {
+
+/*.btn-default:hover {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
@@ -43,33 +37,26 @@ body {
         border-top-left-radius: 10px;
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
-}
+}*/
 
-.btn-default:hover:after{
+/*.btn-default:hover:after{
   width: 0%;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
-
 .btn-danger:hover {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
-}
-.btn-danger:hover:after{
+}*/
+/*.btn-danger:hover:after{
   width: 0%;
-}
-
-
+}*/
 .navbar-brand img {
   margin-top: 5px;
   max-width: 215px;
-}
-
-a:hover{
-  font-size: 101%;
 }
 p.queue-timestamp {
   margin-bottom: 0;
@@ -87,14 +74,6 @@ li{
 }
 .modal-backdrop.in{
   z-index: 1020;
-}
-#black-team{
-  color: white;
-  text-shadow: 2px 2px red;
-}
-#red-team{
-  color: white;
-  text-shadow: 2px 2px black;
 }
 img.banner-gif {
   margin: 0 auto;

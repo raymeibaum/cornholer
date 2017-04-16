@@ -5,17 +5,27 @@
   </div>
   <div class="row text-center">
     <div class="col-xs-6">
-      <div id="black-jumbotron" class="jumbotron">
+      <div class="jumbotron black-jumbotron">
         <button class="btn btn-lg btn-default" ng-click="$ctrl.adjustScore('black-plus')">+</button>
         <button class="btn btn-lg btn-default" ng-click="$ctrl.adjustScore('black-minus')">-</button>
-        <button class="btn btn-lg btn-default" ng-click="$ctrl.nextTeam('black')">Next Team</button>
       </div>
     </div>
     <div class="col-xs-6">
-      <div id="red-jumbotron" class="jumbotron">
+      <div class="jumbotron red-jumbotron">
         <button class="btn btn-lg btn-default" ng-click="$ctrl.adjustScore('red-plus')">+</button>
         <button class="btn btn-lg btn-default" ng-click="$ctrl.adjustScore('red-minus')">-</button>
-        <button class="btn btn-lg btn-default" ng-click="$ctrl.nextTeam('red')">Next Team</button>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-xs-6">
+      <div class="jumbotron black-jumbotron">
+        <button class="btn btn-default" ng-click="$ctrl.nextTeam('black')">Next Team</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="jumbotron red-jumbotron">
+        <button class="btn btn-default" ng-click="$ctrl.nextTeam('red')">Next Team</button>
       </div>
     </div>
   </div>
