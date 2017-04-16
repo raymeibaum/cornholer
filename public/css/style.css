@@ -71,8 +71,8 @@ body {
 a:hover{
   font-size: 101%;
 }
-p{
-  text-align:center;
+p.queue-timestamp {
+  margin-bottom: 0;
 }
 h4{
   text-align:center;

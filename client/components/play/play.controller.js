@@ -1,6 +1,6 @@
-PlayController.$inject = ['$rootScope', 'UsersService', 'SocketService']
+PlayController.$inject = ['$rootScope', '$state', 'UsersService', 'SocketService']
 
-function PlayController($rootScope, UsersService, SocketService) {
+function PlayController($rootScope, $state, UsersService, SocketService) {
   const vm = this;
 
   vm.users = [];
@@ -30,6 +30,7 @@ function PlayController($rootScope, UsersService, SocketService) {
   function submitSignUp() {
     SocketService
       .addToList(vm.signup);
+    $state.go('gameView');
   }
 }
 
