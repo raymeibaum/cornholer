@@ -18,7 +18,7 @@ function passportHelpers(passport) {
 
   passport.use('register', new LocalStrategy({ passReqToCallback: true }, function(req, username, password, done) {
     if (req.body.password !== req.body.confirmPassword) {
-      return done(null, false);
+      return done(null, false, {message: "Passwords don't match."});
     }
     User.findOne({ username: username })
       .exec(function gottaNameThings(err, user) {
@@ -46,7 +46,7 @@ function passportHelpers(passport) {
       .exec(function(err, user) {
         if (err) { return done(err); }
         if (!user || !bcrypt.compareSync(password, user.passwordDigest)) {
-          return done(null, false);
+          return done(null, false, {message: "Incorrect username or password."});
         } else {
           return done(null, user);
         }

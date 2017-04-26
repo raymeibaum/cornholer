@@ -12,14 +12,15 @@
       <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="$ctrl.user.password" required />
     </div>
     <div class="form-group">
-      <label for="pwd">Confirm Password</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="$ctrl.user.confirmPassword" required />
+      <label for="pwd2">Confirm Password</label>
+      <input type="password" class="form-control" id="pwd2" placeholder="Enter password" ng-model="$ctrl.user.confirmPassword" required />
     </div>
     <div class="form-group">
       <label for="username">Phone Number</label>
-      <input type="tel" class="form-control" id="phone" placeholder="Optional" ng-model="$ctrl.user.telephone">
+      <input type="tel" class="form-control" id="phone" placeholder="Optional" ng-model="$ctrl.user.telephone" disabled>
     </div>
     <button type="submit" class="btn btn-danger">Submit</button>
+    <span class="text-danger" ng-bind="$ctrl.errorMessage"></span>
   </form>
   <hr>
   <p>Already have an account? Sign in<a ui-sref="login"> here.</a></p>

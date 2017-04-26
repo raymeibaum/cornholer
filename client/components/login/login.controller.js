@@ -4,7 +4,8 @@ function LoginController($rootScope, $state, AuthService) {
   const vm = this;
 
   vm.user = {};
-  vm.login = login
+  vm.errorMessage = "";
+  vm.login = login;
 
   function login() {
     AuthService
@@ -12,6 +13,8 @@ function LoginController($rootScope, $state, AuthService) {
       .then(function(response) {
         $rootScope.currentUser = response.data;
         $state.go('gameView');
+      }, function reject(error) {
+        vm.errorMessage = "Incorrect username or password.";
       });
   }
 }

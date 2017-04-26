@@ -9,12 +9,10 @@ module.exports = function(passport) {
   });
 
   router.post('/register', passport.authenticate('register'), function(req, res) {
-    console.log(req.user);
     res.json(req.user);
   });
 
   router.get("/loggedin", function(req, res) {
-    console.log(req.isAuthenticated());
     req.isAuthenticated() ? res.send(req.user) : res.send('0')
   });
 
